@@ -3,6 +3,7 @@
 2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK
 
 <p align="center"><img width=50% src="https://github.com/vsangelidakis/SHAPE/blob/master/figures/SHAPE_Logo_Extended.png"></p>
+
 ---
 
 SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques to reduce the number of triangular faces of each particle to user-defined fidelity levels.
