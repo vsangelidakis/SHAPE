@@ -9,7 +9,7 @@
 <p align="center">
   <a href="#what-shape-does">What SHAPE does</a> •
   <a href="#credits">Credits</a> •
-  <a href="#byos-(bring-your-own-scripts)!">BYOS (Bring Your Own Scripts)!</a> •
+  <a href="#byos-(bring-your-own-scripts)">BYOS (Bring Your Own Scripts)!</a> •
   <a href="#license">License</a>
 </p>
 
