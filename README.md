@@ -16,6 +16,21 @@
 ## What SHAPE does
 SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques to reduce the number of triangular faces of each particle to user-defined fidelity levels.
 
+## Code architecture
+SHAPE is built using an object-oriented architecture, where each particle has the following set of attributes:
+
+- Particle
+	- Particle_type
+		- Mesh
+		-
+
+
+## Simple example
+
+```Matlab
+p=Particle(P,F,[],Texture,options); % P: List of Vertices; F: List of Faces; Texture: Planar roughness profile
+```
+
 ## Credits
 SHAPE uses several external functions available within the Matlab FEX community. We want to acknowledge the work of the following contributions, for making our lives easier:
 
@@ -32,7 +47,7 @@ Anton Semechko - [Exact minimum bounding spheres and circles](https://uk.mathwor
 These external dependencies are added within the source code of SHAPE, to provide an out-of-the-box implementation.
 
 ## BYOS (Bring Your Own Scripts)!
-If you enjoyed using SHAPE and you are interested in shape characterisation, you are welcome to require the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful, so feel free to expand the code.
+If you enjoyed using SHAPE and you are interested in shape characterisation, you are welcome to require the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code or report issues.
 
 ## License
 GPLv3
