@@ -22,13 +22,12 @@ SHAPE implements morphological characterisation of three-dimensional particles f
 SHAPE is built using an object-oriented architecture, where each particle has the following set of attributes:
 
 ```Matlab
--Particle_container 
-  -Particle % e.g. 1, 2, 3, etc.
-    -Particle_type % e.g. Original, Convex_hull, Face_No_100, Face_No_50, etc.
-      -Mesh % Surface_mesh, Tetrahedral_mesh, Voxelised_image, Surface_texture
-      -Auxiliary_geometries % AABB, OBB, Fitted_ellipsoid, Minimal_bounding_sphere, Maximal_inscribed_sphere
-      -Geometrical_features % Volume, Centroid, Surface_area, Current_inertia_tensor, Principal_inertia_tensor, Principal_orientations
-      -Morphological_features % Form, Roundness, Roughness
+-Particle % e.g. 1, 2, 3, etc.
+  -Particle_type % e.g. Original, Convex_hull, Face_No_100, Face_No_50, etc.
+    -Mesh % Surface_mesh, Tetrahedral_mesh, Voxelised_image, Surface_texture
+    -Auxiliary_geometries % AABB, OBB, Fitted_ellipsoid, Minimal_bounding_sphere, Maximal_inscribed_sphere
+    -Geometrical_features % Volume, Centroid, Surface_area, Current_inertia_tensor, Principal_inertia_tensor, Principal_orientations
+    -Morphological_features % Form, Roundness, Roughness
 ```
 
 ## File tree
@@ -47,7 +46,7 @@ This example demonstrates different ways to define Particle objects and characte
 
 ```Matlab
 addpath(genpath('functions'));	% Load in-house functions
-addpath(genpath('lib'));		% Load external functions (dependencies)
+addpath(genpath('lib'));	% Load external functions (dependencies)
 addpath(genpath('classes'));	% Load object-oriented architecture
 
 % Define particle from Point Cloud
