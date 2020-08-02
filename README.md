@@ -9,7 +9,7 @@
 <p align="center">
   <a href="#what-shape-does">What SHAPE does</a> •
   <a href="#credits">Credits</a> •
-  <a href="#byos-(bring-your-own-scripts)">BYOS (Bring Your Own Scripts)!</a> •
+  <a href="#byos-(bring-your-own-scripts)">BYOS (Bring Your Own Scripts)</a> •
   <a href="#license">License</a>
 </p>
 
@@ -31,7 +31,7 @@ Anton Semechko - [Exact minimum bounding spheres and circles](https://uk.mathwor
 
 These external dependencies are added within the source code of SHAPE, to provide an out-of-the-box implementation.
 
-## BYOS (Bring Your Own Scripts)!
+## BYOS (Bring Your Own Scripts)
 If you enjoyed using SHAPE and you are interested in shape characterisation, you are welcome to require the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful, so feel free to expand the code.
 
 ## License
