@@ -37,7 +37,6 @@ SHAPE is built using an object-oriented architecture, where each particle has th
   - [LICENSE](LICENSE)
   - [README.md](README.md)
   - __classes__ (Definition of objects)
-    - [Auxiliary_geometries.m](classes/Auxiliary_geometries.m)
   - __examples__
   - __figures__
   - __functions__ (Some of the functions are overloaded as methods in the classes)
