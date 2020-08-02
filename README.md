@@ -1,9 +1,7 @@
-<h1 align="center">SHAPE</a></h1>
-<h3 align="center">SHape Analyser for Particle Engineering</a></h3>
-<p align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></p>
-2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK
-
 <p align="center"><img width=50% src="https://github.com/vsangelidakis/SHAPE/blob/master/figures/SHAPE_Logo_Extended.png"></p>
+
+<h3 align="center">SHape Analyser for Particle Engineering</a></h3>
+<h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
 
 ---
 
