@@ -25,7 +25,8 @@
   <a href="#byos-bring-your-own-scripts">BYOS</a> •
   <a href="#license">License</a>
 </p>
-
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-GPL-3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 ---
 
 ## What SHAPE does
