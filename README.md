@@ -14,16 +14,12 @@
     <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering: &url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
     <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
          alt="GitHub tweet">
-
     <a href="Contributions welcome">
     <img src="https://img.shields.io/badge/contributions-welcome-orange.svg"
          alt="Contributions welcome">
-
     <a href="https://opensource.org/licenses/GPL-3.0">
     <img src="https://img.shields.io/badge/license-GPL-3.0-blue.svg"
          alt="License">
-
-
 </p>
 
 
