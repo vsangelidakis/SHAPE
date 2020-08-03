@@ -1,7 +1,7 @@
 % SHAPE: SHape Analyser for Particle Engineering
 % Authors: Angelidakis, V., Nadimi, S., Utili, S. (2020)
 %
-% Report issues on github or email at: v.angelidakis2@ncl.ac.uk
+% Report issues on github or email at v.angelidakis2@ncl.ac.uk
 
 % Example: Load particle shapes using GUI
 
@@ -16,19 +16,20 @@ addpath(genpath('../classes'))
 load('options.mat');
 
 %% Load multiple particle geometries using GUI
-[file,path] = uigetfile('.stl','multiselect','on');
-for i=1:length(file)
-	try % if multiple particles are selected, file is a cell
+[file,path] = uigetfile('.stl','Pick .stl files','multiselect','on');
+
+if ischar(file) % if a single particle is selected, file is of char type
+	[P,F,n] = stlRead([path,file]);
+	particleContainer{1}=Particle(P,F,[],[],options);
+else % if multiple particles are selected, file is of cell type
+	for i=1:length(file)
 		[P,F,n] = stlRead([path,file{i}]);
-	catch  % if a single particle is selected, file is a string
-		[P,F,n] = stlRead([path,file]);
+		particleContainer{i}=Particle(P,F,[],[],options);
 	end
-	particleContainer{i}=Particle(P,F,[],[],options);
 end
 
 %% FIXME: ALSO LOAD TEXTURE.txt for each file!!!
 %% FIXME: ALSO LOAD A SEGMENTED CT image!!!
-%% FIXME: IF I LOAD 1 PARTICLE, THE BRACES CAUSE AN ERROR
 
 %% Save Workspace
 % save('SavedSimulation'); % Save workspace (all variables)

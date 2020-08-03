@@ -29,7 +29,7 @@
 ---
 
 ## What SHAPE does
-SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques, to reduce the number of triangular faces of each particle to user-defined fidelity levels. The particle shapes can be exported to different formats, compatible with various FEA and DEM solvers.
+SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques, to reduce the number of triangular faces of each particle to user-defined fidelity levels. The particle shapes can be exported to several formats, compatible with various FEA and DEM solvers.
 
 ## Architectural features
 SHAPE is built using an object-oriented architecture, where each particle has the following set of attributes:

@@ -1,7 +1,7 @@
 % SHAPE: SHape Analyser for Particle Engineering
 % Authors: Angelidakis, V., Nadimi, S., Utili, S. (2020)
 %
-% Report issues on github or email at: v.angelidakis2@ncl.ac.uk
+% Report issues on github or email at v.angelidakis2@ncl.ac.uk
 
 % Example: Different input methods
 
