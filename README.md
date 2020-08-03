@@ -14,14 +14,13 @@
     <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering: &url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
     <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
          alt="GitHub tweet">
+
+    <a href="Contributions welcome">
+    <img src="https://img.shields.io/github/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
+         alt="Contributions welcome">
+
 </p>
 
-
-[![last commit](https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg)](https://github.com/vsangelidakis/SHAPE/commits/master)
-[![]()]()
-[![]()]()
-[![]()]()
-[![]()]()
 
 
 
