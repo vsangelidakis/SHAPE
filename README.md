@@ -1,9 +1,22 @@
 <p align="center"><img width=50% src="https://github.com/vsangelidakis/SHAPE/blob/master/figures/SHAPE_Logo_Extended.png"></p>
-
-<h3 align="center">SHape Analyser for Particle Engineering</a></h3>
-<h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
+<h2 align="center">SHape Analyser for Particle Engineering</a></h2>
 
 ---
+
+<p align="center">
+    <a href="https://github.com/vsangelidakis/SHAPE/commits/master">
+    <img src="https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub last commit">
+    <a href="https://github.com/vsangelidakis/SHAPE/issues">
+    <img src="https://img.shields.io/github/issues-raw/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub issues">
+    <a href="https://github.com/vsangelidakis/SHAPE/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub pull requests">
+    <a href="https://twitter.com/intent/tweet?text=Try this CS:GO AutoExec:&url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
+    <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
+         alt="GitHub tweet">
+</p>
 
 <p align="center">
   <a href="#what-shape-does">What SHAPE does</a> •
@@ -79,3 +92,5 @@ If you enjoy using SHAPE and you are interested in shape characterisation, you a
 
 ## License
 GPLv3
+
+<h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
