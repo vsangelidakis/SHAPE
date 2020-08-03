@@ -3,6 +3,7 @@
 
 ---
 
+
 <p align="center">
     <a href="https://github.com/vsangelidakis/SHAPE/commits/master">
     <img src="https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
@@ -13,7 +14,7 @@
     <a href="https://github.com/vsangelidakis/SHAPE/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests">
-    <a href="https://twitter.com/intent/tweet?text=Try this CS:GO AutoExec:&url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
+    <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering #SH_A_P_E:&url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
     <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
          alt="GitHub tweet">
 </p>
@@ -29,7 +30,7 @@
 </p>
 
 ## What SHAPE does
-SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques to reduce the number of triangular faces of each particle to user-defined fidelity levels.
+SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques, to reduce the number of triangular faces of each particle to user-defined fidelity levels. The particle shapes can be exported to different formats, compatible with various FEA and DEM solvers.
 
 ## Architectural features
 SHAPE is built using an object-oriented architecture, where each particle has the following set of attributes:
