@@ -1,6 +1,7 @@
 <p align="center"><img width=50% src="https://github.com/vsangelidakis/SHAPE/blob/master/figures/SHAPE_Logo_Extended.png"></p>
 <h2 align="center">SHape Analyser for Particle Engineering</a></h2>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <p align="center">
     <a href="https://github.com/vsangelidakis/SHAPE/commits/master">
     <img src="https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
