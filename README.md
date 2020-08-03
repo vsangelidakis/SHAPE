@@ -16,8 +16,13 @@
          alt="GitHub tweet">
 
     <a href="Contributions welcome">
-    <img src="https://img.shields.io/github/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
+    <img src="https://img.shields.io/badge/contributions-welcome-orange.svg"
          alt="Contributions welcome">
+
+    <a href="https://opensource.org/licenses/GPL-3.0">
+    <img src="https://img.shields.io/badge/license-GPL-3.0-blue.svg"
+         alt="License">
+
 
 </p>
 
