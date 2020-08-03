@@ -14,7 +14,7 @@
     <a href="https://github.com/vsangelidakis/SHAPE/pulls">
     <img src="https://img.shields.io/github/issues-pr-raw/vsangelidakis/SHAPE.svg?style=flat-square&logo=github&logoColor=white"
          alt="GitHub pull requests">
-    <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering &#35SH_A_P_E:&url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
+    <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering &#35 SH_A_P_E:&url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
     <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
          alt="GitHub tweet">
 </p>
