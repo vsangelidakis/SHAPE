@@ -17,7 +17,7 @@
 </p>
 
 
-[![](https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg)]()
+[![last commit](https://img.shields.io/github/last-commit/vsangelidakis/SHAPE.svg)](https://github.com/vsangelidakis/SHAPE/commits/master)
 [![]()]()
 [![]()]()
 [![]()]()
