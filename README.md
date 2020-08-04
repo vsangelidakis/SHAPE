@@ -43,7 +43,7 @@ SHAPE is built using an object-oriented architecture, where each particle has th
     -Geometrical_features % Volume, Centroid, Surface_area, Current_inertia_tensor, Principal_inertia_tensor, Principal_orientations
     -Morphological_features % Form, Roundness, Roughness
 ```
-
+SHAPE
 ## File tree
 - __SHAPE__
   - [LICENSE](LICENSE)
