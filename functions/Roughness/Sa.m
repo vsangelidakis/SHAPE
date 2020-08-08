@@ -1,12 +1,11 @@
 function [Sa] = Sa(Z)
 
-%% FIXME
+%% FIXME: Write input/output and parameters descriptions
 % INPUT
 
 % Return the parameter Sa: Mean height of rough surface
-% Sa=1/(n*m)*sum(sum(|Z-Zm|)) 
-[n,m]=size(Z);
-Zm=1./(n*m)*sum(Z(:));
-Sa=1./(n*m)*sum(sum(abs(Z-Zm)));
+[i,j]=size(Z);
+Zm=1./(i*j)*sum(Z(:));
+Sa=1./(i*j)*sum(sum(abs(Z-Zm)));
 end
 
