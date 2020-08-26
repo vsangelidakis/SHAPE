@@ -13,6 +13,9 @@
     <a href="https://opensource.org/licenses/GPL-3.0">
     <img src="https://img.shields.io/badge/license-GPL-blue.svg"
          alt="License">
+    <a href="https://doi.org/10.5281/zenodo.4001670">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4001670.svg"
+	     alt="DOI"></a>
     <a href="https://twitter.com/intent/tweet?text=SHape Analyser for Particle Engineering: &url=https%3A%2F%2Fgithub.com%2Fvsangelidakis%2FSHAPE">
     <img src="https://img.shields.io/twitter/url/https/github.com/vsangelidakis/SHAPE.svg?style=flat-square&logo=twitter"
          alt="GitHub tweet">
