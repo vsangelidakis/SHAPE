@@ -40,7 +40,7 @@ SHAPE is built using an object-oriented architecture, where each particle has th
 ```Matlab
 -Particle % e.g. 1, 2, 3, etc.
   -Particle_type % e.g. Original, Convex_hull, Face_No_100, Face_No_50, etc.
-    -Mesh % Surface_mesh, Tetrahedral_mesh, Voxelised_image, Surface_texture
+    -Mesh % Surface_mesh, Tetrahedral_mesh, Voxelated_image, Surface_texture
     -Auxiliary_geometries % AABB, OBB, Fitted_ellipsoid, Minimal_bounding_sphere, Maximal_inscribed_sphere
     -Geometrical_features % Volume, Centroid, Surface_area, Current_inertia_tensor, Principal_inertia_tensor, Principal_orientations
     -Morphological_features % Form, Roundness, Roughness
@@ -66,13 +66,13 @@ addpath(genpath('lib'));	% Load external functions (dependencies)
 addpath(genpath('classes'));	% Load object-oriented architecture
 
 % Define particle from Point Cloud
-Particle_container{1}=Particle(P,[],[],[],options); % P (Nv x 3): List of Vertices; options (struct): options for shape characterisation and/or simplification
+p1=Particle(P,[],[],[],options); % P (Nv x 3): List of Vertices; options (struct): options for shape characterisation and/or simplification
 
 % Define particle from Surface/Tetrahedral Mesh and Texture profile
-Particle_container{2}=Particle(P,F,[],Texture,options); % P (Nv x 3): List of Vertices; F (Nf x 3) or (Nf x 4): List of Faces/Elements; Texture (Nx x Ny): Planar roughness profile
+p2=Particle(P,F,[],Texture,options); % P (Nv x 3): List of Vertices; F (Nf x 3) or (Nf x 4): List of Faces/Elements; Texture (Nx x Ny): Planar roughness profile
 
 % Define particle from voxelated (volumetric) image
-Particle_container{3}=Particle([],[],Vox,[],options); % Vox (Nx x Ny x Nz): Segmented voxelated (3-D) image of particle geometry;
+p3=Particle([],[],Vox,[],options); % Vox (Nx x Ny x Nz): Segmented voxelated (3-D) image of particle geometry;
 ```
 
 New users are advised to start from running the available examples in the [examples](examples) folder, to get familiarised with the syntax and functionalities of SHAPE.
