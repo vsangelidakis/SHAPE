@@ -21,7 +21,7 @@ classdef Particle_type %< dynamicprops
 	end
 	
 	methods %(Static)
-		function obj = Particle_type(Vertices,Faces,Voxelised_image,Texture,options,varargin)
+		function obj = Particle_type(Vertices,Faces,Voxelated_image,Texture,options,varargin)
 			%PARTICLE_TYPE Constructor from point cloud, surface or tetrahedral mesh
 
 			% vararging{1} contains the volume of the convex hull
@@ -32,7 +32,7 @@ classdef Particle_type %< dynamicprops
 			%%
 			%% FIXME: Do I need dynamic properties here?
 
-			obj.Mesh=Mesh(Vertices,Faces,Voxelised_image,Texture,options);
+			obj.Mesh=Mesh(Vertices,Faces,Voxelated_image,Texture,options);
 			obj.Auxiliary_geometries=Auxiliary_geometries(obj.Mesh,options);
 			obj.Geometrical_features=Geometrical_features(obj.Mesh, obj.Auxiliary_geometries);
 

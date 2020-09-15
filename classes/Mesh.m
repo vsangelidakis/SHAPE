@@ -3,22 +3,22 @@ classdef Mesh
 	%MESH: Meshed geometries of the particle:
 	%	Surface_Mesh
 	%	Tetrahedral_Mesh
-	%	Voxelised_image
+	%	Voxelated_image
 	%	Surface_texture
 
 	properties
 		Surface_mesh
 		Tetrahedral_mesh
-		Voxelised_image
+		Voxelated_image
 		Surface_texture
 	end
 	
 	methods %(Static)
-		function obj = Mesh(Vertices,Faces,Voxelised_image,Texture,options)
-			%MESH Constructor of meshes from point cloud, mesh (surface or tetrahedral) or voxelised image
+		function obj = Mesh(Vertices,Faces,Voxelated_image,Texture,options)
+			%MESH Constructor of meshes from point cloud, mesh (surface or tetrahedral) or voxelated image
 			
-			if (isempty(Vertices)==false || isempty(Faces)==false) && isempty(Voxelised_image)==false % Check input variables: Do not allow simultaneous definition of Vertices-Faces and Voxelised_image
-				error('Too many input arguments. Define either: "Vertices" or "Vertices" and Faces or "Voxelised_image"')
+			if (isempty(Vertices)==false || isempty(Faces)==false) && isempty(Voxelated_image)==false % Check input variables: Do not allow simultaneous definition of Vertices-Faces and Voxelated_image
+				error('Too many input arguments. Define either: "Vertices" or "Vertices" and Faces or "Voxelated_image"')
 			end
 			
 			if isempty(Vertices) && isempty(Faces)==false % Check input variables: Do not allow definition of Faces without defining Vertices (the inverse is allowed)
@@ -95,9 +95,9 @@ classdef Mesh
 % % 				img(2:end-1,2:end-1,2:end-1)=imgTemp2;
 % % 				clear imgTemp imgTemp2
 % % 
-% % 				obj.Voxelised_image.img=img; %(~img);
-% % 				obj.Voxelised_image.map=map;
-% % 				obj.Voxelised_image.voxel_size=[map(1,1) map(2,2) map(3,3)];
+% % 				obj.Voxelated_image.img=img; %(~img);
+% % 				obj.Voxelated_image.map=map;
+% % 				obj.Voxelated_image.voxel_size=[map(1,1) map(2,2) map(3,3)];
 % % % clc
 % 			elseif isempty(Vertices)==false && size(Faces,2)==3 %Surface mesh, vertices and faces are given
 % 				obj.Surface_mesh.Vertices=Vertices;
@@ -116,24 +116,24 @@ classdef Mesh
 				img(2:end-1,2:end-1,2:end-1)=imgTemp2;
 				clear imgTemp imgTemp2
 
-				obj.Voxelised_image.img=img;
-				obj.Voxelised_image.map=map;
-				obj.Voxelised_image.voxel_size=[map(1,1) map(2,2) map(3,3)];
+				obj.Voxelated_image.img=img;
+				obj.Voxelated_image.map=map;
+				obj.Voxelated_image.voxel_size=[map(1,1) map(2,2) map(3,3)];
 
-			elseif isempty(Vertices) && isempty(Faces) && isempty(Voxelised_image)==false %Voxelised image is given
+			elseif isempty(Vertices) && isempty(Faces) && isempty(Voxelated_image)==false %Voxelated image is given
 
 				%% FIXME Not working yet: To be amended soon!
 				disp('Under development')
-% 				obj.Voxelised_image=Voxelised_image;
+% 				obj.Voxelated_image=Voxelated_image;
 % 				maxvol=10000;
 				opt=[];
 				method='cgalsurf'; % cgalsurf
 				isovalues=0.5;
 				assignin('base','ISO2MESH_TETGENOPT',[' -A -Q -q1.414a' num2str(options.Mesh.surf2mesh.maxvol)])
 % 				ISO2MESH_TETGENOPT=[' -A -Q -q1.414a' num2str(options.Mesh.surf2mesh.maxvol)];
-				[node,elem,face]=v2m(Voxelised_image,isovalues,opt,options.Mesh.surf2mesh.maxvol,method);
+				[node,elem,face]=v2m(Voxelated_image,isovalues,opt,options.Mesh.surf2mesh.maxvol,method);
 
-% 				[no,el,regions,holes]=v2s(Voxelised_image,isovalues,opt,method)
+% 				[no,el,regions,holes]=v2s(Voxelated_image,isovalues,opt,method)
 % 				obj.Surface_mesh.Vertices=Vertices;
 % 				obj.Surface_mesh.Faces=Faces;
 % clc

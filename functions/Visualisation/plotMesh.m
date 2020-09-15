@@ -1,8 +1,8 @@
-function fig=plotMesh(pt,surface_mesh,tetrahedral_mesh,voxelised_mesh,surface_texture)
+function fig=plotMesh(pt,surface_mesh,tetrahedral_mesh,voxelated_image,surface_texture)
 % 	pt				:	Particle_type: Original, Convex_hull etc
 %	surface_mesh	:	boolean, whether to plot surface mesh
 %	tetrahedral_mesh:	boolean, whether to plot tetrahedral mesh
-%	voxelised_mesh	:	boolean, whether to plot voxelised image
+%	voxelated_image	:	boolean, whether to plot voxelated image
 %	surface_texture	:	boolean, whether to plot surface texture
 
 % Enable OpenGL to use volshow
@@ -55,10 +55,10 @@ opengl hardwarebasic
 	end
 % 	
 	%% Volumetric mesh
-	if voxelised_mesh
-		fig.Voxelised_mesh=figure();
-		p = uipanel('Title','Voxelised mesh','FontSize',16,'TitlePosition','centertop','FontName','Modern No. 20');
-		vox=pt.Mesh.Voxelised_image.img;
+	if voxelated_image
+		fig.Voxelated_image=figure();
+		p = uipanel('Title','Voxelated mesh','FontSize',16,'TitlePosition','centertop','FontName','Modern No. 20');
+		vox=pt.Mesh.Voxelated_image.img;
 		volshow(vox,'Parent',p);
 	end
 % 

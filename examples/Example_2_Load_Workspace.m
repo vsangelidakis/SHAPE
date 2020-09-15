@@ -31,14 +31,14 @@ for i=1:length(directories)
 	particleContainer{i}=Particle(P,F,[],[],options); %false
 end
 
-%% Save Workspace
+%% Save Workspace or Particles
 % save('SavedSimulation'); % Save workspace (all variables)
 save('SavedSimulation_p','particleContainer'); % Save particle container only
 
 %% Clear Workspace
 clear
 
-%% Load Workspace
+%% Load Workspace or Particles
 % load('SavedSimulation'); % Load workspace (all variables)
 load('SavedSimulation_p','particleContainer'); % Load particle container only
 

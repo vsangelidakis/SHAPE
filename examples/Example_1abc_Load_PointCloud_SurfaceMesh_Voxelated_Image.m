@@ -58,7 +58,7 @@ p2=Particle(P,F,[],[],options);
 % % plotmesh(p2.Original.Mesh.Surface_mesh.Vertices,p2.Original.Mesh.Surface_mesh.Faces,'FaceColor','b')
 % % camlight
 % 
-% % Dodecahedron=p2.Original.Mesh.Voxelised_image;
+% % Dodecahedron=p2.Original.Mesh.Voxelated_image;
 % % save('Dodecahedron','Dodecahedron');
 
 

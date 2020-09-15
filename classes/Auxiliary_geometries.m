@@ -48,9 +48,9 @@ classdef Auxiliary_geometries
 			ver_surf=ms.Surface_mesh.Vertices;
 %  			ver_mesh=ms.Tetrahedral_mesh.Vertices;
 			
-% 			img=ms.Voxelised_image
-			img=ms.Voxelised_image.img;
-% 			map=ms.Voxelised_image.map;
+% 			img=ms.Voxelated_image
+			img=ms.Voxelated_image.img;
+% 			map=ms.Voxelated_image.map;
 
 			%% AABB
 			obj.AABB.Extrema=[min(ver_surf); max(ver_surf)];
@@ -106,9 +106,9 @@ classdef Auxiliary_geometries
 						%% FIXME: voxel_size must become 1x1 and so I don't need the index (1) below
 						%% FIXME: Do not load voxelData twice, I also use it below for the inscribed sphere
 						
-						voxelData=ms.Voxelised_image.img; 
+						voxelData=ms.Voxelated_image.img; 
 						[data(:,1),data(:,2),data(:,3)] = ind2sub(size(voxelData),find(voxelData>0));
-						dx=ms.Voxelised_image.voxel_size(1);
+						dx=ms.Voxelated_image.voxel_size(1);
 						tempData=data*dx;
 						ver=tempData - mean(tempData);% + geom.Centroid;
 						
@@ -208,7 +208,7 @@ classdef Auxiliary_geometries
 			% uses a shiftdim at some point.
 			% ---------------------------------------------
 
-			dx=ms.Voxelised_image.voxel_size;
+			dx=ms.Voxelated_image.voxel_size;
 
 			%% FIXME: voxel_size should be 1x1: Change this and remove the indices (1), (2), (3) below
 			

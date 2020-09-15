@@ -11,7 +11,7 @@ classdef Particle < dynamicprops
 	end
 	
 	methods %(Static)
-		function obj = Particle(Vertices,Faces,Voxelised_Matrix,Texture,options)
+		function obj = Particle(Vertices,Faces,Voxelated_image,Texture,options)
 			
 			%% FIXME: I don't need warnings to be defined for every particle maybe?
 			%% Can I move it somewhere where it is processed once?
@@ -29,22 +29,22 @@ classdef Particle < dynamicprops
 			if isempty(Vertices)==false	% Vertices are given as input
 				shp=alphaShape(Vertices,inf);
 				Volume_CH=volume(shp); %Volume_of_convex_hull
-				obj.Original=Particle_type(Vertices,Faces,Voxelised_Matrix,Texture,options,Volume_CH);
+				obj.Original=Particle_type(Vertices,Faces,Voxelated_image,Texture,options,Volume_CH);
 				
 				if options.useConvexHull
 					obj.addprop('Convex_hull');
 					[F, V] = boundaryFacets(shp);
-					obj.Convex_hull=Particle_type(V,F,[],[],options); % []: Voxelised_image
+					obj.Convex_hull=Particle_type(V,F,[],[],options); % []: Voxelated_image
 				end
 				
-			else % Voxelised_image is given as input
+			else % Voxelated_image is given as input
 				%% FIXME: Handle the CT input case. Here and in the Mesh class
 				
 				%% FIXME: Set this up
 				%% FIXME: Make this work for segmented, multi-particle voxelated images, where the user hasn't defined vertices yet
 				
-				Voxelised_Matrix.img
-				Voxelised_Matrix.voxel_size
+				Voxelated_image.img
+				Voxelated_image.voxel_size
 				
 			end
 		end
