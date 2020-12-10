@@ -9,7 +9,7 @@ clc; clear; close all
 
 %% Include code data-structure
 addpath(genpath('../functions'))
-addpath(genpath('../lib'))			%FIXME: Maybe rename this to "extern"
+addpath(genpath('../lib'))
 addpath(genpath('../classes'))
 
 %% Load simulation options
@@ -22,8 +22,8 @@ inputDirectory='Platonic_solids/'; % Directory where all the particle shapes are
 parDir=dir(inputDirectory);
 ind=1;
 for i=1:size(parDir,1)
-	if parDir(i,1).isdir==false % if it is not a folder
-		if strcmp(parDir(i,1).name(end-2:end),'stl') % include more extensions, to .mat files
+	if parDir(i,1).isdir==false % skip folders (subdirectories), read only files
+		if strcmp(parDir(i,1).name(end-2:end),'stl') % here we can include more/any file formats, as long as we have a function to load them
 			[P,F,n] = stlRead([parDir(i,1).folder,'\',parDir(i,1).name]);
 			particleContainer{ind}=Particle(P,F,[],[],options);			
 
@@ -41,6 +41,6 @@ end
 
 %% Save Workspace
 % save('SavedSimulation');					% Save workspace (all variables)
-% save('PlatonicSolids','particleContainer'); % Save particle container only
+save('PlatonicSolids','particleContainer');	% Save particle container only
 
 disp('Done!')

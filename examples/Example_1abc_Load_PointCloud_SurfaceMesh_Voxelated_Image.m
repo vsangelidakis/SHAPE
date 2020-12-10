@@ -28,16 +28,16 @@ if runPart==1
 		%  z: 2-D matrix with equal spacing, where the intensity/value of each pixel/element reflects the elevation of each point of the surface texture.
 		% dx: spacing (in length units) between measurements in X direction
 		% dy: spacing (in length units) between measurements in Y direction
-	load('Texture.mat'); % Load 
+	load('Texture.mat');
 
-	%% Case 1: Define particle providing a point cloud and using the "Crust" algorithm to mesh the particle
+	%% Case 1: Define particle providing a point cloud and using the "Crust" algorithm to tesselate the particle surface
 	p1=Particle(P,[],[],Texture,options);
 	
 	%% Case 2: Define particle providing a surface mesh
 	p2=Particle(P,F,[],[],options); 
 
 	%% Case 3: Define particle providing a tetrahedral mesh
-	[Ptet,Etet,Ftet]=s2m(P,F,1,10000); % Transform surface to tetrahedral mesh
+	[Ptet,Etet,Ftet]=s2m(P,F,1,10000); % Transform surface to tetrahedral mesh using iso2mesh
 	p3=Particle(Ptet,Etet(:,1:4),[],[],options);
 
 	%% Plot p1, p2, p3

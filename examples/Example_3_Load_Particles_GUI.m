@@ -9,7 +9,7 @@ clc; clear; close all
 
 %% Include code data-structure
 addpath(genpath('../functions'))
-addpath(genpath('../lib'))			%FIXME: Maybe rename this to "extern"
+addpath(genpath('../lib'))
 addpath(genpath('../classes'))
 
 %% Load simulation options
