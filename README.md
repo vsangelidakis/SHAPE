@@ -50,10 +50,11 @@ SHAPE is built using an object-oriented architecture, where each particle has th
 - __SHAPE__
   - [LICENSE](LICENSE)
   - [README.md](README.md)
+  - [README.txt](README.txt)
   - __classes__ (Definition of objects)
   - __examples__
   - __figures__
-  - __functions__ (Some of the functions are overloaded as methods in the classes)
+  - __functions__
   - __lib__ (External dependencies)
 
 
