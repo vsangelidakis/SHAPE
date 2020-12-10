@@ -33,13 +33,13 @@ end
 
 %% Save Workspace or Particles
 % save('SavedSimulation'); % Save workspace (all variables)
-save('SavedSimulation_p','particleContainer'); % Save particle container only
+save('SavedSimulation','particleContainer'); % Save particle container only
 
 %% Clear Workspace
 clear
 
 %% Load Workspace or Particles
-% load('SavedSimulation'); % Load workspace (all variables)
-load('SavedSimulation_p','particleContainer'); % Load particle container only
+% load('SavedSimulation');						% Load workspace (all variables)
+load('SavedSimulation','particleContainer');	% Load particle container only
 
 disp('Done!')

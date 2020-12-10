@@ -16,7 +16,7 @@ addpath(genpath('../classes'))
 load('options.mat');
 
 %% Load multiple particle geometries using GUI
-[file,path] = uigetfile('.stl','Pick .stl files','multiselect','on');
+[file,path] = uigetfile('*.stl','Pick .stl files','multiselect','on');
 
 if ischar(file) % if a single particle is selected, file is of char type
 	[P,F,n] = stlRead([path,file]);
@@ -28,11 +28,8 @@ else % if multiple particles are selected, file is of cell type
 	end
 end
 
-%% FIXME: ALSO LOAD TEXTURE.txt for each file!!!
-%% FIXME: ALSO LOAD A SEGMENTED CT image!!!
-
 %% Save Workspace
-% save('SavedSimulation'); % Save workspace (all variables)
-save('Container','particleContainer'); % Save particle container only
+% save('SavedSimulation');				% Save workspace (all variables)
+save('Container','particleContainer');	% Save particle container only
 
 disp('Done!')

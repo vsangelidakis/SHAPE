@@ -16,7 +16,7 @@ addpath(genpath('../classes'))
 %% Load simulation options
 load('options.mat');
 
-runPart=2; % 1: run Part 1: Input from point cloud/surface mesh/tetrahedral mesh
+runPart=1; % 1: run Part 1: Input from point cloud/surface mesh/tetrahedral mesh
            % 2: run Part 2: Input from segmented voxelated image with multiple particles
 
 if runPart==1
@@ -24,9 +24,15 @@ if runPart==1
 	%% PART 1: Load surface mesh from .stl file
 	[P,F,n] = stlRead('Platonic_solids/Dodecahedron.stl');
 
-	%% Case 1: Define particle providing a point cloud and using the "Crust" algorithm to mesh the particle
-	p1=Particle(P,[],[],[],options);
+	%% Load surface texture. "Texture" is a struct with fields:
+		%  z: 2-D matrix with equal spacing, where the intensity/value of each pixel/element reflects the elevation of each point of the surface texture.
+		% dx: spacing (in length units) between measurements in X direction
+		% dy: spacing (in length units) between measurements in Y direction
+	load('Texture.mat'); % Load 
 
+	%% Case 1: Define particle providing a point cloud and using the "Crust" algorithm to mesh the particle
+	p1=Particle(P,[],[],Texture,options);
+	
 	%% Case 2: Define particle providing a surface mesh
 	p2=Particle(P,F,[],[],options); 
 

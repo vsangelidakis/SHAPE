@@ -3,7 +3,7 @@
 %
 % Report issues on github or email at v.angelidakis2@ncl.ac.uk
 
-% Example: Load all particle shapes present in a specific folder
+% Example: Load all particle shapes inside a specific directory
 
 clc; clear; close all
 
@@ -26,7 +26,7 @@ for i=1:size(parDir,1)
 		if strcmp(parDir(i,1).name(end-2:end),'stl') % include more extensions, to .mat files
 			[P,F,n] = stlRead([parDir(i,1).folder,'\',parDir(i,1).name]);
 			particleContainer{ind}=Particle(P,F,[],[],options);			
-			
+
 % 			particleDirectories{ind,1}=['Particle_',num2str(ind)]; %Particle id
 % 			particleDirectories{ind,2}=parDir(i,1).name; % Particle filename
 
@@ -40,7 +40,7 @@ for i=1:size(parDir,1)
 end
 
 %% Save Workspace
-% save('SavedSimulation'); % Save workspace (all variables)
-% save('Dodecahedron','particleContainer'); % Save particle container only
+% save('SavedSimulation');					% Save workspace (all variables)
+% save('PlatonicSolids','particleContainer'); % Save particle container only
 
 disp('Done!')
