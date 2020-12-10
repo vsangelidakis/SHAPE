@@ -73,7 +73,7 @@ p1=Particle(P,[],[],[],options); % P (Nv x 3): List of Vertices; options (struct
 p2=Particle(P,F,[],Texture,options); % P (Nv x 3): List of Vertices; F (Nf x 3) or (Nf x 4): List of Faces/Elements; Texture (Nx x Ny): Planar roughness profile
 
 % Define particle from voxelated (volumetric) image
-p3=Particle([],[],Vox,[],options); % Vox (Nx x Ny x Nz): Segmented voxelated (3-D) image of particle geometry;
+p3=Particle([],[],Vox,[],options); % Vox.img (Nx x Ny x Nz): Segmented voxelated (3-D) image of particle geometry;
 ```
 
 New users are advised to start from running the available examples in the [examples](examples) folder, to get familiarised with the syntax and functionalities of SHAPE.
