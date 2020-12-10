@@ -76,7 +76,7 @@ p2=Particle(P,F,[],Texture,options); % P (Nv x 3): List of Vertices; F (Nf x 3) 
 p3=Particle([],[],Vox,[],options); % Vox.img (Nx x Ny x Nz): Segmented voxelated (3-D) image of particle geometry;
 ```
 
-New users are advised to start from running the available examples in the [examples](examples) folder, to get familiarised with the syntax and functionalities of SHAPE.
+New users are advised to start from running the available [examples](examples), to get familiarised with the syntax and functionalities of SHAPE.
 
 ## Credits
 SHAPE uses several external functions available within the Matlab FEX community. We want to acknowledge the work of the following contributions, for making our lives easier:
