@@ -4,30 +4,33 @@ classdef Auxiliary_geometries
 	%	AABB (Axis-aligned bounding box for the current orientation)
 	%		Extrema (Coordinates of two extreme points)
 	%		Dimensions (length of edges)
-	%		Centroid
-	%		Volume
-	%		Surface_area
+	%			%Centroid
+	%			%Volume
+	%			%Surface_area
 	%	OBB (Oriented bounding box)
 	%		Extrema (Coordinates of two extreme points)
 	%		Dimensions (length of edges)
 	%		Centroid
-	%			Volume
-	%			Surface_area
-	%			Orientation
+	%		Volume
+	%		Surface_area
+	%			%Orientation
 	%	Fitted_ellipsoid (using least squares)
 	%		Extrema (Coordinates of two extreme points)
 	%		Dimensions (length of axes)
 	%		Centroid
-	%			Volume
-	%			Surface_area
-	%			Orientation
+	%			%Volume
+	%			%Surface_area
+	%			%Orientation
 	%	Minimal_bounding_sphere (using Ritter's algorithm)
 	%		Radius
 	%		Centre
+	%			%Volume
+	%			%Surface_area
 	%	Maximal_inscribed_sphere (using a Euclidean map)
 	%		Radius
 	%		Centre
-
+	%			%Volume
+	%			%Surface_area
 
 	%% FIXME: Add orientation of OBB/ELI?
 	%% CHECK: Do/Should I monitor the centroid, volume, surface area for all of the shapes above?
@@ -59,10 +62,8 @@ classdef Auxiliary_geometries
 			
 			
 			%% OBB
-			
-			%% FIXME: See if I can use this from minBoundBox
-% 			ind = strmatch(metric,{'volume','surface','edges'});
-			
+				% FIXME: See if I can use this from minBoundBox
+%				ind = strmatch(metric,{'volume','surface','edges'});
 			minimalOBB={'minVolume','minSurfaceArea','minSumEdges'};
 			[LIA, LOC] = ismember(options.Auxiliary_Geometries.OBB.method, minimalOBB);
 			if LIA
@@ -86,16 +87,6 @@ classdef Auxiliary_geometries
 				clear ind_S ind_L				
 				
 			elseif strcmp(options.Auxiliary_Geometries.OBB.method,'PCA_points')
-% 				if strcmp(options.Auxiliary_Geometries.OBB.points,'Surface_points')
-% 					
-% 				elseif strcmp(options.Auxiliary_Geometries.OBB.points,'Tetrahedra_points')
-% 					
-% 				elseif strcmp(options.Auxiliary_Geometries.OBB.points,'Voxel_points')
-% 
-% 				else
-% 					error('options.Auxiliary_Geometries.OBB.points must be either: "Surface_points", "Tetrahedra_points" or "Voxel_points".')
-% 				end
-
 				switch options.Auxiliary_Geometries.OBB.points
 					case 'Surface_points'
 						ver=ver_surf;
@@ -103,43 +94,34 @@ classdef Auxiliary_geometries
 						ver=ms.Tetrahedral_mesh.Vertices;						
 					case 'Voxel_points'
 						
-						%% FIXME: voxel_size must become 1x1 and so I don't need the index (1) below
+						%% FIXME: voxel_size will become 1x1 and so I don't need the index (1) below
 						%% FIXME: Do not load voxelData twice, I also use it below for the inscribed sphere
 						
+						%% FIXME: clear any 3D matrices I don't need
+						
+						% Here I center the voxel coordinates to the centroid of the voxelated image
 						voxelData=ms.Voxelated_image.img; 
 						[data(:,1),data(:,2),data(:,3)] = ind2sub(size(voxelData),find(voxelData>0));
-						dx=ms.Voxelated_image.voxel_size(1);
-						tempData=data*dx;
+						tempData=data*ms.Voxelated_image.voxel_size(1);
 						ver=tempData - mean(tempData);% + geom.Centroid;
 						
 % 						ver(:,1)=obj.AABB.Extrema(1,1)-2*dx+data(:,1)*dx; % Remap voxels of centroid to Cartesian space
 % 						ver(:,2)=obj.AABB.Extrema(1,2)-2*dx+data(:,2)*dx;
 % 						ver(:,3)=obj.AABB.Extrema(1,3)-2*dx+data(:,3)*dx;
-
-
-%% 						ver= %% FIXME
 					otherwise
 						error('options.Auxiliary_Geometries.OBB.points must be either: "Surface_points", "Tetrahedra_points" or "Voxel_points".')
 				end
-				
 				[obj.OBB.cornerpoints,obj.OBB.rotmat,obj.OBB.volume,obj.OBB.surface,obj.OBB.center,obj.OBB.dimensions]=OBB_PCA_SVD(ver);
-				
-				%% FIXME: Here I need to provide an outline solution for all scenarios
-				
 			else
 				error('options.Auxiliary_Geometries.OBB.method must be either "PCA_points", "minVolume", "minSurfaceArea" or "minSumEdges"')
 			end
 
-
-			%%
-			%% FIXME: Maybe I don't need to store these in two different places
-			%%
-			
-% 			% Small, Intermediate and Long axis using the oriented bounding box
-% % 			axes_obb=aux.OBB.dimensions;
-% 			geom.S_obb=S_obb;	geom.I_obb=I_obb;	geom.L_obb=L_obb;
-			
+		
 			%% Fitted ellipsoid
+			
+				%% TODO: ADD options.ELL: ver_surf, ver_tetr
+				%% TODO: Rename _obb to _OBB and _eli to _ELL
+			
 % 			[center, radii, evecs, v, chi] = ellipsoid_fit([ver_mesh(:,1),ver_mesh(:,2),ver_mesh(:,3)]);
 			[center, radii, evecs, v, chi] = ellipsoid_fit(ver_surf,'');
 			
@@ -147,7 +129,6 @@ classdef Auxiliary_geometries
 			[L_eli, ind_L] = max(radii);
 			ind_I=6 - ind_S - ind_L;
 			I_eli = radii(ind_I);
-% 			I_eli = radii(radii~=S_eli & radii~=L_eli);
 
 			% Multiply the radii with 2 to get the length of the axes of the ellipsoid (double the radii).
 			S_eli = S_eli * 2;
@@ -162,10 +143,7 @@ classdef Auxiliary_geometries
 			obj.Fitted_ellipsoid.v=v;
 			obj.Fitted_ellipsoid.chi=chi;
 
-			%%
 			%% FIXME: Maybe I don't need to store these in two different places
-			%%
-			
 % 			% Small, Intermediate and Long axis using the fitted ellipsoid
 % % 			axes_eli=aux.Fitted_ellipsoid.dimensions;
 % 			geom.S_eli=S_eli;	geom.I_eli=I_eli;	geom.L_eli=L_eli;
@@ -188,7 +166,8 @@ classdef Auxiliary_geometries
 			radius = max(edtImage(:)); %-1	% Inradius in voxel units %%FIXME: Do I need to add -1 here?
 			[xCenter, yCenter, zCenter]= ind2sub(size(img),find(edtImage == radius)); % Center in voxel units
 
-			%% FIXME: Do I need to change x,y above???
+			%% FIXME: Check if I need to change x,y above.
+			%% TODO: If the particle is convex, use linear programming, to specify the inradius as the Chebychev center.
 			
 			%% I think the 3 lines below are wrong. Use instead the first element
 % 			xCenter=mean(xCenter);

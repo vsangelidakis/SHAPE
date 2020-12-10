@@ -39,6 +39,9 @@ classdef Particle_type %< dynamicprops
 			if nargin==6 % if the volume of the convex hull is given (for concave particles)
 				if varargin{1}>0
 					obj.Geometrical_features.Volume_CH=varargin{1};
+				elseif varargin{1}==0 % if 0 is given, we compute the convex hull once more, in the Particle_type=Original object
+						shp=alphaShape(obj.Mesh.Surface_mesh.Vertices,inf); % FIXME: With this, I calculate the CH twice. To be optimised
+						obj.Geometrical_features.Volume_CH=volume(shp);
 				else
 					error('Volume of the convex hull must be positive.')
 				end

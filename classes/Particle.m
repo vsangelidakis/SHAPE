@@ -2,9 +2,7 @@ classdef Particle < dynamicprops
 	%PARTICLE: Class containing all the information of a particle
 	properties
 		Original
-		
 		%% FIXME: Choose whether to save the attributes below for each particle
-		%%
 		% 		id
 		% 		Directory
 		% 		Filename
@@ -14,7 +12,7 @@ classdef Particle < dynamicprops
 		function obj = Particle(Vertices,Faces,Voxelated_image,Texture,options)
 			
 			%% FIXME: I don't need warnings to be defined for every particle maybe?
-			%% Can I move it somewhere where it is processed once?
+			%% Can I move it somewhere where it is processed once? I can set the scene in the beginning of each simulation
 			
 			% Whether to display warnings
 			if strcmp(options.warning,'on')
@@ -26,11 +24,18 @@ classdef Particle < dynamicprops
 				warning('warning must be "on" or "off"')
 			end
 			
+			%% FIXME
+			% Identify input type: Vertices or Vertices+Faces or
+			% Voxelated_image: I do this in the Mesh. Is that too far
+			% down?? Maybe expose this attribute at a higher level, i.e.
+			% here
+			
+			%%
 			if isempty(Vertices)==false	% Vertices are given as input
-				shp=alphaShape(Vertices,inf);
-				Volume_CH=volume(shp); %Volume_of_convex_hull
-				obj.Original=Particle_type(Vertices,Faces,Voxelated_image,Texture,options,Volume_CH);
-				
+				shp=alphaShape(Vertices,inf);	% Create convex hull as an alpha-shape with radius=inf
+				Volume_CH=volume(shp);			% Volume_of_convex_hull
+				obj.Original=Particle_type(Vertices,Faces,[],Texture,options,Volume_CH);
+
 				if options.useConvexHull
 					obj.addprop('Convex_hull');
 					[F, V] = boundaryFacets(shp);
@@ -38,20 +43,25 @@ classdef Particle < dynamicprops
 				end
 				
 			else % Voxelated_image is given as input
-				%% FIXME: Handle the CT input case. Here and in the Mesh class
+% 				shp=alphaShape(Vertices,inf);	% Create convex hull as an alpha-shape with radius=inf
+% 				Volume_CH=volume(shp);			% Volume_of_convex_hull
+				%% FIXME: Check again the volume of the convex hull
+
+				if ~isa(Voxelated_image.img,'uint8')
+					Voxelated_image.img=uint8(Voxelated_image.img); % Transform voxelated image to uint8 array
+				end
+				obj.Original=Particle_type([],[],Voxelated_image,Texture,options,0);
 				
-				%% FIXME: Set this up
-				%% FIXME: Make this work for segmented, multi-particle voxelated images, where the user hasn't defined vertices yet
-				
-				Voxelated_image.img
-				Voxelated_image.voxel_size
-				
+				if options.useConvexHull
+					obj.addprop('Convex_hull');
+					shp=alphaShape(obj.Original.Mesh.Surface_mesh.Vertices,inf);
+					[F, V] = boundaryFacets(shp);
+					obj.Convex_hull=Particle_type(V,F,[],[],options); % []: Voxelated_image
+				end				
 			end
 		end
 		
-		%%: Method to calculate simplify particle geometry
-		
-		%% FIXME: Add a dense mesh first
+		%% Method to simplify particle geometry
 		function Simplify(obj,options) %Simplify(obj,options)
 			% % 			obj=Particle;
 			if ~options.useConvexHull
@@ -62,6 +72,8 @@ classdef Particle < dynamicprops
 				Fm_ini=obj.Convex_hull.Mesh.Surface_mesh.Faces;
 			end
 			
+					%% Check: Add a dense mesh first
+							
 			for numFaces=options.Simplify.numFaces
 				% Add dynamic property in the Particle class
 				pSimplified=obj.addprop(['Faces_No_',num2str(numFaces)]);
