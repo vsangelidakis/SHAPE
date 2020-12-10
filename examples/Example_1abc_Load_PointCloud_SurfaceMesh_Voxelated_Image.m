@@ -5,7 +5,6 @@
 %
 % Example: Try different input formats
 %
-%
 
 clc; clear; close all
 
@@ -52,6 +51,7 @@ if runPart==1
 elseif runPart==2
 	%% Load segmented voxelated image
 	load('SegmentedImage');
+	options.convexHull=false; % Do not calculate the convex hull; the particles are already convex
 	
 	labels=unique(SegmentedImage.img); %%
 	labels(labels==0)=[]; % Remove zero (empty) voxels from the labels list

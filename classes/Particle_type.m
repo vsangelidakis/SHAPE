@@ -1,36 +1,24 @@
-classdef Particle_type %< dynamicprops
+classdef Particle_type
 	%PARTICLE_TYPE: Type of the particle, e.g.:
 	%	Original (real particle geometry)
 	%	Convex_hull (calculated if options.useConvexHull=true)
 	%	Faces_No_100 (if this is a simplified particle geometry)
 	%	Faces_No_50  (if this is a simplified particle geometry)
 	%	etc.
-	%
-	%	More subclasses can be added with "addprop", which allows the
-	%	creation of dynamic properties for a class
-
-	%% FIXME: INSTEAD OF NAMING THIS Particle_type, I COULD NAME IT: Particle_properties
 	
 	properties
 		Mesh
 		Auxiliary_geometries
 		Geometrical_features
 		Morphological_features 
-		
-% 		P = addprop(H,'PropertyName') in the script
 	end
 	
 	methods %(Static)
 		function obj = Particle_type(Vertices,Faces,Voxelated_image,Texture,options,varargin)
 			%PARTICLE_TYPE Constructor from point cloud, surface or tetrahedral mesh
-
 			% vararging{1} contains the volume of the convex hull
 
-			%%
-			%% FIXME: Add the the constructor from CT data
 			%% FIXME: Update the nargin value if I remove any parameters!!
-			%%
-			%% FIXME: Do I need dynamic properties here?
 
 			obj.Mesh=Mesh(Vertices,Faces,Voxelated_image,Texture,options);
 			obj.Auxiliary_geometries=Auxiliary_geometries(obj.Mesh,options);

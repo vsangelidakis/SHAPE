@@ -97,7 +97,8 @@ classdef Mesh
 				node=node*Voxelated_image.voxel_size(1); % Transform from voxel space to Cartesian space
 				
 					% FIXME: Check again the transformation from voxel space to Cartesian space above
-				
+					% FIXME: Check, do I need to flip x and y?
+					
 				obj.Surface_mesh.Vertices=node(:,1:3);
 				obj.Surface_mesh.Faces=face(:,1:3);
 				
