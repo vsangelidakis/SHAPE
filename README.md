@@ -96,6 +96,6 @@ Anton Semechko - [Exact minimum bounding spheres and circles](https://uk.mathwor
 These external dependencies are added within the source code of SHAPE, to provide an out-of-the-box implementation. The licensing terms of each external dependency can be found inside the [lib](lib/) folder.
 
 ## BYOS (Bring Your Own Scripts)!
-If you enjoy using SHAPE and you are interested in shape characterisation, you are welcome to require the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code, propose improvements and report issues.
+If you enjoy using SHAPE and you are interested in shape characterisation, you are welcome to ask for the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code, propose improvements and report issues.
 
 <h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
