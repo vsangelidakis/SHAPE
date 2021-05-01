@@ -26,7 +26,7 @@
   <a href="#file-tree">File tree</a> •
   <a href="#simple-example">Simple example</a> •
   <a href="#credits">Credits</a> •
-  <a href="#byos-bring-your-own-scripts">BYOS</a>
+  <a href="#byos-bring-your-own-scripts">BYOS</a> •
   <a href="#acknowledging-shape">Acknowledging SHAPE</a>
 </p>
 
