@@ -72,5 +72,8 @@ These external dependencies are added within the source code of SHAPE, to provid
 █ BYOS (Bring Your Own Scripts)!
 If you enjoy using SHAPE and you are interested in shape characterisation, you are welcome to ask for the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code, propose improvements and report issues.
 
+█ Citing SHAPE
+Angelidakis, V., Nadimi, S. and Utili, S., 2021. SHape Analyser for Particle Engineering (SHAPE): Seamless characterisation and simplification of particle morphology from imaging data. Computer Physics Communications, p.107983.
+
 █ Copyright
 2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK

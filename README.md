@@ -27,6 +27,7 @@
   <a href="#simple-example">Simple example</a> •
   <a href="#credits">Credits</a> •
   <a href="#byos-bring-your-own-scripts">BYOS</a>
+  <a href="#acknowledging-shape">Acknowledging SHAPE</a>
 </p>
 
 ---
@@ -91,5 +92,10 @@ These external dependencies are added within the source code of SHAPE, to provid
 
 ## BYOS (Bring Your Own Scripts)!
 If you enjoy using SHAPE and you are interested in shape characterisation, you are welcome to ask for the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code, propose improvements and report issues.
+
+## Acknowledging SHAPE
+Angelidakis, V., Nadimi, S. and Utili, S., 2021. SHape Analyser for Particle Engineering (SHAPE): Seamless characterisation and simplification of particle morphology from imaging data. Computer Physics Communications, p.107983.
+
+[Download BibTeX entry](https://scholar.googleusercontent.com/scholar.bib?q=info:YnCf-RzOG3kJ:scholar.google.com/&output=citation&scisdr=CgUBjowYEKvXiHNcTOo:AAGBfm0AAAAAYI1ZVOpttc_VIUj5xS257rY2Xbo25Hko&scisig=AAGBfm0AAAAAYI1ZVMDFFiqm9PJnjzrc2TGjVI2gHuV9&scisf=4&ct=citation&cd=-1&hl=en&scfhb=1)
 
 <h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
