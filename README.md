@@ -96,6 +96,6 @@ If you enjoy using SHAPE and you are interested in shape characterisation, you a
 ## Acknowledging SHAPE
 Angelidakis, V., Nadimi, S. and Utili, S., 2021. SHape Analyser for Particle Engineering (SHAPE): Seamless characterisation and simplification of particle morphology from imaging data. Computer Physics Communications, p.107983.
 
-[Download BibTeX entry](https://scholar.googleusercontent.com/scholar.bib?q=info:YnCf-RzOG3kJ:scholar.google.com/&output=citation&scisdr=CgUBjowYEKvXiHNcTOo:AAGBfm0AAAAAYI1ZVOpttc_VIUj5xS257rY2Xbo25Hko&scisig=AAGBfm0AAAAAYI1ZVMDFFiqm9PJnjzrc2TGjVI2gHuV9&scisf=4&ct=citation&cd=-1&hl=en&scfhb=1)
+[Download BibTeX entry](https://github.com/vsangelidakis/SHAPE/blob/master/CITATION.bib)
 
-<h4 align="center">2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>
+<h4 align="center">2021 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK</a></h4>

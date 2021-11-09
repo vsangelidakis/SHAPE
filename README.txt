@@ -15,6 +15,7 @@
   • Simple example
   • Credits
   • BYOS (Bring Your Own Scripts)!
+  • Acknowledging SHAPE
 
 █ What SHAPE does
 SHAPE implements morphological characterisation of three-dimensional particles from imaging data, such as point clouds, surface and tetrahedral meshes or segmented voxelated images (derived using Computed Tomography). Characterisation of morphology is performed for all three aspects of shape, namely form, roundness and surface texture (roughness). The code also supports shape simplification, using edge-collapse techniques, to reduce the number of triangular faces of each particle to user-defined fidelity levels. The particle shapes can be exported to several formats, compatible with various FEA and DEM solvers.
@@ -72,8 +73,8 @@ These external dependencies are added within the source code of SHAPE, to provid
 █ BYOS (Bring Your Own Scripts)!
 If you enjoy using SHAPE and you are interested in shape characterisation, you are welcome to ask for the implementation of new morphological descriptors and features or even better contribute and share your implementations. SHAPE was created out of our excitement and curiosity around the characterisation of irregular particle morphologies and we share this tool hoping that members of the community will find it useful. So, feel free to expand the code, propose improvements and report issues.
 
-█ Citing SHAPE
+█ Acknowledging SHAPE
 Angelidakis, V., Nadimi, S. and Utili, S., 2021. SHape Analyser for Particle Engineering (SHAPE): Seamless characterisation and simplification of particle morphology from imaging data. Computer Physics Communications, p.107983.
 
 █ Copyright
-2020 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK
+2021 © Vasileios Angelidakis, Sadegh Nadimi, Stefano Utili. Newcastle University, UK
