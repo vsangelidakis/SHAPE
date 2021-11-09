@@ -1,4 +1,4 @@
-function [spK, flP, elP, flK, elK, SIZ, ILZ] = Form_functions_2(S,I,L)
+function [spK, flP, elP, flK, elK, flA, elA, SIZ, ILZ] = Form_functions_2(S,I,L)
 %FORM_FUNCTIONS_2 Shape indices corresponding to form, using the particle axes S,I,L
 addpath(genpath('Form'))
 
@@ -19,5 +19,6 @@ addpath(genpath('Form'))
 spK = Sphericity_Krumbein(S,I,L);						% K denoting: Krumbein (1941)
 [flP, elP] = Form_parameters_Potticary_et_al(S,I,L);	% P denoting: Potticary et al (2015)
 [flK, elK] = Form_parameters_Kong_and_Fonseca(S,I,L);	% K denoting: Kong and Fonseca (2018)
+[flA, elA] = Form_parameters_Angelidakis_et_al(S,I,L);	% A denoting: Angelidakis et al (2021)
 [SIZ, ILZ] = Form_parameters_Zingg(S,I,L);				% Z denoting: Zingg (1935)
 end
