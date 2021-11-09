@@ -1,7 +1,6 @@
-function [c_over_b, b_over_a] = Form_parameters_Zingg(S,I,L)
+function [c_over_b, b_over_a] = Form_parameters_Zingg(c,b,a)
 %% Form parameters proposed by Zingg (1935)
-% 	S,I,L: Short, Intermediate and Long dimension of a particle
-
-	c_over_b=S/I;
-	b_over_a=I/L;
+%  c,b,a: Short, Intermediate and Long dimension of a particle (aka S,I,L)
+	c_over_b=c/b;
+	b_over_a=b/a;
 end
