@@ -103,8 +103,8 @@ classdef Auxiliary_geometries
 						voxelData=ms.Voxelated_image.img; 
 						[data(:,1),data(:,2),data(:,3)] = ind2sub(size(voxelData),find(voxelData>0));
 						tempData=data*ms.Voxelated_image.voxel_size(1);
-						ver=tempData - mean(tempData);% + geom.Centroid;
-						
+						ver=tempData - ones(length(tempData),1)*mean(tempData);% + geom.Centroid;
+
 % 						ver(:,1)=obj.AABB.Extrema(1,1)-2*dx+data(:,1)*dx; % Remap voxels of centroid to Cartesian space
 % 						ver(:,2)=obj.AABB.Extrema(1,2)-2*dx+data(:,2)*dx;
 % 						ver(:,3)=obj.AABB.Extrema(1,3)-2*dx+data(:,3)*dx;
