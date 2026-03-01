@@ -24,7 +24,7 @@ ind=1;
 for i=1:size(parDir,1)
 	if parDir(i,1).isdir==false % skip folders (subdirectories), read only files
 		if strcmp(parDir(i,1).name(end-2:end),'stl') % here we can include more/any file formats, as long as we have a function to load them
-			[P,F,n] = stlRead([parDir(i,1).folder,'\',parDir(i,1).name]);
+			[P,F,n] = stlRead([parDir(i,1).folder,'/',parDir(i,1).name]);
 			particleContainer{ind}=Particle(P,F,[],[],options);			
 
 % 			particleDirectories{ind,1}=['Particle_',num2str(ind)]; %Particle id

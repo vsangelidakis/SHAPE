@@ -1,4 +1,4 @@
-function val=jsonopt(key,default,varargin)
+function val = jsonopt(key, default, varargin)
 %
 % val=jsonopt(key,default,optstruct)
 %
@@ -7,12 +7,10 @@ function val=jsonopt(key,default,varargin)
 %
 % authors:Qianqian Fang (q.fang <at> neu.edu)
 %
-% $Id: loadjson.m 371 2012-06-20 12:43:06Z fangq $
-%
 % input:
 %      key: a string with which one look up a value from a struct
 %      default: if the key does not exist, return default
-%      optstruct: a struct where each sub-field is a key 
+%      optstruct: a struct where each sub-field is a key
 %
 % output:
 %      val: if key exists, val=optstruct.key; otherwise val=default
@@ -20,16 +18,19 @@ function val=jsonopt(key,default,varargin)
 % license:
 %     BSD or GPL version 3, see LICENSE_{BSD,GPLv3}.txt files for details
 %
-% -- this function is part of jsonlab toolbox (http://iso2mesh.sf.net/cgi-bin/index.cgi?jsonlab)
-% 
+% -- this function is part of JSONLab toolbox (http://iso2mesh.sf.net/cgi-bin/index.cgi?jsonlab)
+%
 
-val=default;
-if(nargin<=2) return; end
-opt=varargin{1};
-if(isstruct(opt))
-    if(isfield(opt,key))
-       val=getfield(opt,key);
-    elseif(isfield(opt,lower(key)))
-       val=getfield(opt,lower(key));
+val = default;
+if (nargin <= 2)
+    return
+end
+key0 = lower(key);
+opt = varargin{1};
+if (isstruct(opt))
+    if (isfield(opt, key0))
+        val = opt.(key0);
+    elseif (isfield(opt, key))
+        val = opt.(key);
     end
 end

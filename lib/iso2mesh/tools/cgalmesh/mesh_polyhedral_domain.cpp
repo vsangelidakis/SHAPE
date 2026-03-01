@@ -1,4 +1,11 @@
-#include <CGAL/AABB_intersections.h>
+#include <CGAL/version.h>
+
+#if !defined(CGAL_VERSION_NR) || CGAL_VERSION_NR <=  1040700000
+	#include <CGAL/AABB_intersections.h>
+#else
+	#include <CGAL/intersections.h>
+#endif
+
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 
 #include <CGAL/Mesh_triangulation_3.h>
@@ -58,7 +65,7 @@ int main(int argc,char *argv[])
         CGAL::Random rd(atoi(argv[8]));
         CGAL::Random::State st;
         rd.save_state(st);
-        CGAL::default_random.restore_state(st);
+        CGAL::get_default_random().restore_state(st);
   }
   std::ifstream input(argv[1]);
   input >> polyhedron;
